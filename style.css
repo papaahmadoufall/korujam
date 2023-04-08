@@ -1,0 +1,46 @@
+:root{
+  --bg-color-dark:#160e03;
+  --bg-color-light:#160e03;
+  --color-dark:#fff;
+  --color-light:#000;
+  --brown:#d6a65e
+}
+
+*,body{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "poppins";
+}
+
+body{
+  background-color: var(--bg-color-dark) ;
+  color: var(--color-dark);
+  width: 100%;
+}
+
+.container-mobile{
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: auto;
+}
+section.top-infos{
+display: flex;
+flex-direction: column;
+}
+div.row{
+  display: flex ;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+div.weather-infos{
+
+}
+.sun{
+  width: 24px;
+  height: 24px;
+  background-color: #ffaa04;
+  border-radius: 100%;
+}
