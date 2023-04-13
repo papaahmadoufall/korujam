@@ -1,46 +1,338 @@
+/* variable */
 :root{
   --bg-color-dark:#160e03;
   --bg-color-light:#160e03;
   --color-dark:#fff;
   --color-light:#000;
-  --brown:#d6a65e
+  --brown:#d6a65e;
+  --mobile-spacing:16px;
+  --desktop-spacing:32px
+}
+
+@font-face {
+  font-family: poppins;
+  src: url("asset/Poppins/Poppins-Regular.ttf") format('truetype')
+  
+}
+@font-face {
+  font-family: poppins-bold;
+  src: url("asset/Poppins/Poppins-Bold.ttf") format('truetype')
+  
 }
 
 *,body{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "poppins";
+  /* font-family: "poppins",Arial, Helvetica, sans-serif; */
+  font-family: 'poppins' !important;
+
 }
+
+.toggle {
+  cursor: pointer;
+  display: inline-block;
+}
+
+.toggle-switch {
+  display: inline-block;
+  background: white;
+  border-radius: 16px;
+  width: 48px;
+  height: 24px;
+  position: relative;
+  vertical-align: middle;
+  transition: background 0.25s;
+}
+.toggle-switch:before, .toggle-switch:after {
+  content: "";
+}
+.toggle-switch:before {
+  display: block;
+  background-color: var(--bg-color-light);
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  transition: left 0.25s;
+}
+.toggle:hover .toggle-switch:before {
+  background:  #160e03 ;
+  
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
+}
+.toggle-checkbox:checked + .toggle-switch {
+  background: var(--bg-color-light);
+}
+.toggle-checkbox:checked + .toggle-switch:before {
+  left: 28px;
+  background: white;
+
+}
+
+.toggle-checkbox {
+  position: absolute;
+  visibility: hidden;
+}
+
+.toggle-label {
+  margin-left: 5px;
+  position: relative;
+  top: 2px;
+}
+/* debug */
+
+/* section{
+  border: 1px solid red;
+}
+div{
+  border: 1px solid green;
+}
+span{
+  border: 1px solid yellow;
+} */
+
+/* debug */
 
 body{
   background-color: var(--bg-color-dark) ;
   color: var(--color-dark);
   width: 100%;
 }
-
 .container-mobile{
   display: flex;
   flex-direction: column;
   width: 80%;
   margin: auto;
 }
-section.top-infos{
-display: flex;
-flex-direction: column;
+@media (min-width:800px ){
+  .container-mobile{
+    width: 80%;
+  }
+  
+  
 }
-div.row{
-  display: flex ;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
+@media (max-width:800px ){
+  .container-mobile{
+    width: 90%;
+  }
 }
-div.weather-infos{
 
+@media (max-width:600px ){
+  .toggle-label{
+    display: none;
+  }
+  
+
+  
+  }
+
+.row{
+  display: flex;
+  flex-direction: row;  
+  
 }
-.sun{
+.column{
+  display: flex;
+  flex-direction: column;  
+}
+section{
+  width: 100%;
+  border-radius: 10px;
+  padding: 12px;
+}
+
+
+div.sun{
   width: 24px;
   height: 24px;
-  background-color: #ffaa04;
-  border-radius: 100%;
+  background-color: #ffaa04 ;
+  border-radius: 100% ;
 }
+.top-infos{
+  width: 100%;
+  margin-top: 20px;
+  gap: 12px;
+}
+.weather-infos{
+  align-items: center;
+  gap: 5px;
+}
+.top-infos > .row{
+justify-content: space-between;
+}
+.top-infos > .time > p{
+  margin-left: 20px;
+}
+
+div.user{
+  width: 100%;
+}
+div.user  h5#salam{
+color: #6A5F4E;  
+}
+div.user-profile > svg{
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+
+
+section.iftar-infos{
+  margin: 12px 0 12px 0;
+  width: 100%;
+  height: 8%;
+  background: url('asset/bg-iftar.jpg') no-repeat   ;
+  position: relative;
+}
+section.iftar-infos > .mosque-bg > img{
+width: 100%;
+}
+
+section.iftar-infos > .mosque-bg {
+  position: absolute;
+  bottom: -10px;
+  right: -10px;
+  width: 100px;
+}
+section.iftar-infos > .row{
+justify-content: space-between;
+}
+x
+section.iftar-infos   p{
+font-weight: bold;
+}
+div.notification > p{
+  justify-content: center;
+  gap: 10px;
+}
+.day-counter p {
+  margin-top: 20px;
+  font-weight: bold;
+}
+.big-wrap{
+  width: 100%;
+  height: 33vh;
+}
+
+.big-wrap, .column, .row{
+  width: 100%;
+  gap: 12px;
+}
+.big-wrap .column{
+width: 50%;
+height: 100%;
+}
+.big-wrap .column section{
+align-self: center;
+
+}
+.big-wrap .column section.salat-time{
+  width: 100%;
+  background-color:#d38c67 ;
+  height: auto;
+  justify-content: space-between;
+}
+section.salat-time .row{
+  justify-content: space-between;
+}
+section.salat-time .title p#time{
+font-size: xx-large;
+font-weight: bold;
+}
+
+section.sunset-time{
+  position: relative;
+  padding: 0 ;
+  height: 100px;
+background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(83.55deg, #3D81BF 3.18%, #5DE6EF 97.38%);
+overflow: hidden;
+}
+section.sunset-time .bg{
+  padding: 12px;
+    width: 100%;
+    height: 100%;
+    background: url('asset/pattern.svg')no-repeat;
+    background-position-y: top;
+    background-position-x: right;
+    background-size: cover;
+    background-size: 70%;
+  
+  }
+section.sunrise-time{
+  position: relative;
+  padding: 0 ;
+  height: 100px;
+  background: linear-gradient(83.55deg, #BF6A3D 3.18%, #BF9B3D 97.38%);
+  overflow: hidden;
+}
+
+section.sunrise-time .bg{
+  padding: 12px;
+    width: 100%;
+    height: 100%;
+    background: url('asset/pattern-1.svg')no-repeat;
+    background-position-y: top;
+    background-position-x: left;
+    background-size: cover;
+    background-size: 70%;
+  }
+  section.prayer-time{
+    padding: 0;
+    height: 100%;
+    background-color: #accc59;
+  }
+  section.prayer-item .bigwrap{
+    padding: 10px;
+  }
+  section.prayer-time  >.header ,section.prayer-time h3 ,   section.prayer-time .prayer-item p, section.prayer-time .prayer-item p + span{
+    padding: 6px 6px 0 6px;
+  }
+
+  section.prayer-time h3{
+    
+    color: var(--bg-color-light);
+  }
+  section.prayer-time .prayer-item{
+    height: 45px;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.09); 
+   }
+   section.prayer-time .prayer-item:hover{
+    background: rgba(0, 0, 0, 0.1);
+    transition: all .2s;
+   }
+
+  section.prayer-time .row{
+    justify-content: space-between;
+    color: var(--bg-color-light);
+  }
+  section.prayer-time p , p + span{
+  font-weight: bold;
+  }
+  section.prayer-time .pm{
+    font-size: small;
+  }
+
+  section.nafila-daily{
+    margin-top: 12px;
+    background-color: #d6a65e;
+    color: var(--bg-color-light);
+    
+  }
+
+  section.nafila-daily h3.title{
+    font-family: "poppins-bold" !important ;
+  }
+  section.nafila-daily .nafila-deserve p{
+    font-size: small;
+    font-weight: bold;
+  }
+  section.nafila-daily .nafila-prayer .prayer{
+  border-left: solid rgba(0, 0, 0, 0.53) 4px;
+  padding-left: 10px;
+  }
+  section.nafila-daily .nafila-prayer .prayer{
