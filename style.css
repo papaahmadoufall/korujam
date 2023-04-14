@@ -323,8 +323,25 @@ section.sunrise-time .bg{
     color: var(--bg-color-light);
     
   }
-
-  section.nafila-daily h3.title{
+  section.nafila-daily .column{
+  justify-content: flex-end; 
+  margin-right: 0;
+  }
+  section.nafila-daily .column a{
+text-align: right  ;
+border: 1px solid var(--bg-color-light);
+width: fit-content;
+padding: 3px 15PX;
+border-radius: 10px;
+font-weight: bold;
+  }
+  section.nafila-daily .column a:hover  , section.nafila-daily .column a:hover { 
+  color: white;
+  background-color: #160e03;
+  transition: all .2s;
+  }
+   
+   section.nafila-daily h3.title{
     font-family: "poppins-bold" !important ;
   }
   section.nafila-daily .nafila-deserve p{
@@ -334,11 +351,16 @@ section.sunrise-time .bg{
   section.nafila-daily .nafila-prayer .prayer{
   border-left: solid rgba(0, 0, 0, 0.53) 4px;
   padding-left: 10px;
+
   }
 
   section.nafila-daily .nafila-deserve p q::after{
     float: right;
   }
-  section.nafila-daily .nafila-prayer .prayer{
-  
+
+  section.nafila-daily .nafila-prayer .prayer p{
+    
+  }
+  section.nafila-daily .nafila-prayer .button{
+  align-items: flex-end;
   }
