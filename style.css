@@ -335,4 +335,10 @@ section.sunrise-time .bg{
   border-left: solid rgba(0, 0, 0, 0.53) 4px;
   padding-left: 10px;
   }
+
+  section.nafila-daily .nafila-deserve p q::after{
+    float: right;
+  }
   section.nafila-daily .nafila-prayer .prayer{
+  
+  }
